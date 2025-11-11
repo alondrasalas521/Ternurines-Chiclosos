@@ -1,0 +1,2418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ternurines Chiclosos - Catálogo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --rosa-claro: #fcdcec;
+      --rosa-medio: #f7b5d2;
+      --rosa-fuerte: #f27ba1;
+      --cafe: #7a4a2b;
+      --crema: #fff7ec;
+      --fondo: #fffdfb;
+      --texto: #4b3b3b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--rosa-fuerte);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Barra titular */
+    header.top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--crema);
+      border-bottom: 2px solid var(--rosa-medio);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+.barra-titular {
+  background-color: #fff7f2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 1rem;
+  border-bottom: 2px solid #f7b5d2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+/* El aviso dentro de la barra */
+.aviso-envio {
+  font-size: 0.85rem;
+  color: #ffffff;
+  background-color: #f7b5d2;
+  border-radius: 10px;
+  padding: 0.2rem 0.6rem;
+  margin-top: 0.2rem;
+  font-weight: 700;
+  font-family: 'Poppins', 'Quicksand', sans-serif;
+}
+
+    .brand img {
+      height: 52px;
+      width: 52px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: var(--rosa-claro);
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--rosa-fuerte);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Menú hamburguesa */
+    .menu-toggle {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--cafe);
+    }
+
+    nav.main-nav {
+      position: fixed;
+      inset: 0 40% auto 0;
+      max-width: 260px;
+      background: var(--crema);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      padding: 1rem;
+      transform: translateX(-110%);
+      transition: transform 0.25s ease-out;
+    }
+
+    nav.main-nav.open {
+      transform: translateX(0);
+    }
+
+    .nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .nav-title {
+      font-weight: 700;
+      color: var(--cafe);
+      font-size: 0.95rem;
+    }
+
+    .nav-close {
+      border: none;
+      background: transparent;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--cafe);
+    }
+
+    .nav-list {
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .nav-list > li {
+      margin-bottom: 0.4rem;
+    }
+
+    .nav-list details {
+      background: rgba(252, 220, 236, 0.4);
+      border-radius: 10px;
+      padding: 0.3rem 0.5rem;
+    }
+
+    .nav-list summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: var(--cafe);
+    }
+
+    .nav-list summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-list summary::after {
+      content: "▾";
+      font-size: 0.75rem;
+    }
+
+    .nav-list details[open] summary::after {
+      content: "▴";
+    }
+
+    .nav-sublist {
+      list-style: none;
+      margin-top: 0.3rem;
+      padding-left: 0.6rem;
+    }
+
+    .nav-sublist li {
+      margin: 0.15rem 0;
+    }
+
+    .nav-sublist a {
+      color: var(--texto);
+      font-weight: 400;
+    }
+
+    .nav-simple-link {
+      padding: 0.3rem 0.5rem;
+      border-radius: 10px;
+      background: rgba(247, 181, 210, 0.25);
+      display: inline-block;
+      width: 100%;
+    }
+
+    /* Contenido principal */
+    main {
+      padding: 1rem;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title-group {
+      margin: 2rem 0 0.5rem;
+      font-size: 1.6rem;
+      color: var(--cafe);
+    }
+
+    .section-title {
+      margin: 1rem 0 0.75rem;
+      font-size: 1.3rem;
+      color: var(--cafe);
+      text-transform: capitalize;
+    }
+
+    .section-note {
+      font-size: 0.9rem;
+      color: #7a6666;
+      margin-bottom: 0.5rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--rosa-claro);
+      color: var(--cafe);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, #ffeaf5, #fffdfb);
+      border-radius: 18px;
+      padding: 1rem;
+      border: 1px solid rgba(247, 181, 210, 0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .hero h1 {
+      font-size: 1.4rem;
+      color: var(--cafe);
+    }
+
+    .hero p {
+      font-size: 0.95rem;
+      max-width: 40rem;
+    }
+
+    /* Catálogo */
+    .grid-productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.3rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid-productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .producto {
+      background: white;
+      border-radius: 16px;
+      padding: 0.8rem;
+      border: 1px solid rgba(247, 181, 210, 0.7);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    /* NUEVO: marco rosa y tamaño estándar de las imágenes */
+    .producto-imagen {
+      background: var(--rosa-claro);
+      border-radius: 12px;
+      padding: 8px;
+      height: 210px;              /* alto estándar del recuadro */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .producto-imagen img {
+      max-width: 90%;             /* más pequeño que el recuadro rosa */
+      max-height: 90%;
+      object-fit: contain;        /* no recorta ni deforma */
+      display: block;
+      border-radius: 8px;
+    }
+
+    .producto-nombre {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--cafe);
+      margin-top: 0.25rem;
+    }
+
+    .precio {
+      font-size: 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .precio-actual {
+      font-weight: 700;
+      color: var(--cafe);
+    }
+
+    .precio-original {
+      font-size: 0.85rem;
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+
+    .badge-oferta {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 999px;
+      background: var(--rosa-fuerte);
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .stock {
+      font-size: 0.85rem;
+      color: #6a5555;
+    }
+
+    .stock span {
+      font-weight: 600;
+    }
+
+    /* detalles de precios individuales */
+    .detalles-precio {
+      margin-top: 0.3rem;
+      font-size: 0.85rem;
+      background: rgba(252, 220, 236, 0.35);
+      border-radius: 10px;
+      padding: 0.25rem 0.5rem;
+    }
+
+    .detalles-precio summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--cafe);
+      list-style: none;
+    }
+
+    .detalles-precio ul {
+      margin-top: 0.25rem;
+      margin-left: 1rem;
+      list-style: disc;
+    }
+
+    .pedido-instagram {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 0.6rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(252, 220, 236, 0.5);
+    }
+
+    /* Quiénes somos / Referencias */
+    .texto-bloque {
+      background: white;
+      border-radius: 16px;
+      padding: 1rem;
+      border: 1px solid rgba(247, 181, 210, 0.7);
+      font-size: 0.95rem;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .galeria img {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      height: 150px;
+      background: var(--rosa-claro);
+    }
+
+    footer {
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #806f6f;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra titular -->
+  <header class="top-bar">
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="brand">
+      <img src="Logo Ternurines.jpg" alt="Logo Ternurines Chiclosos" />
+      <span class="brand-title">Ternurines Chiclosos</span>
+    </div>
+  </header>
+
+  <!-- Menú lateral -->
+  <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+    <div class="nav-header">
+      <span class="nav-title">Menú</span>
+      <button class="nav-close" aria-label="Cerrar menú">&times;</button>
+    </div>
+    <ul class="nav-list">
+      <li><a href="#inicio" class="nav-simple-link">Inicio</a></li>
+
+      <li>
+        <details>
+          <summary>Ternurines</summary>
+          <ul class="nav-sublist">
+            <li><a href="#familias">Familias</a></li>
+            <li><a href="#kinder">Kinder</a></li>
+            <li><a href="#sets-especiales">Sets especiales</a></li>
+            <li><a href="#sobres">Sobres</a></li>
+            <li><a href="#ternurines-todo">Castillos y otros sets</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li>
+        <details>
+          <summary>Popmart</summary>
+          <ul class="nav-sublist">
+            <li><a href="#hirono">Hironos</a></li>
+            <li><a href="#kubo">Kubo</a></li>
+            <li><a href="#nyota">Nyota</a></li>
+            <li><a href="#labubu">Labubu</a></li>
+            <li><a href="#dimoo">Dimoo</a></li>
+            <li><a href="#hacipupu">Hacipupu</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li>
+        <details>
+          <summary>Monchichis</summary>
+          <ul class="nav-sublist">
+            <li><a href="#bebichichis">Bebichichis</a></li>
+            <li><a href="#monchichis">Monchichis</a></li>
+            <li><a href="#accesorios-monchichis">Accesorios</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li>
+        <details>
+          <summary>Más</summary>
+          <ul class="nav-sublist">
+            <li><a href="#smiskis">Smiskis</a></li>
+            <li><a href="#nommis">Nommis</a></li>
+            <li><a href="#peluches">Peluches</a></li>
+            <li><a href="#mofusand">Mofusand</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li><a href="#quienes-somos" class="nav-simple-link">Quiénes somos</a></li>
+      <li><a href="#referencias" class="nav-simple-link">Referencias</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Inicio -->
+    <section id="inicio" class="hero">
+      <span class="tag">Catálogo en línea</span>
+      <h1>Bienvenidx a Ternurines Chiclosos</h1>
+      <p>
+        Aquí puedes ver los ternurines, blind boxes y coleccionables que tenemos
+        disponibles. Cada pieza está listada con su precio y existencias para que
+        puedas hacer tu pedido por Instagram.
+      </p>
+    </section>
+
+    <!-- ===================== TERNURINES ===================== -->
+    <section id="ternurines">
+      <h2 class="section-title-group">Ternurines</h2>
+      <p class="section-note">
+        Familias, kinder, sets especiales, sobres y castillos de Sylvanian y otros ternurines.
+      </p>
+    </section>
+
+    <section id="familias">
+      <h3 class="section-title">Familias</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia erizo.png" alt="Familia erizo" />
+          </div>
+          <p class="producto-nombre">Familia erizo</p>
+          <p class="precio">
+            <span class="precio-actual">$680 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia flora.png" alt="Familia flora" />
+          </div>
+          <p class="producto-nombre">Familia flora</p>
+          <p class="precio">
+            <span class="precio-actual">$650 MXN</span>
+            <span class="precio-original">$700 MXN</span>
+            <span class="badge-oferta">Oferta</span>
+          </p>
+          <p class="stock">Existencias: <span>2</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia ardilla.png" alt="Familia ardilla" />
+          </div>
+          <p class="producto-nombre">Familia ardilla</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia Pandas de 3.png" alt="Familia Pandas de 3" />
+          </div>
+          <p class="producto-nombre">Familia Pandas de 3</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia elefante.png" alt="Familia Elefante" />
+          </div>
+          <p class="producto-nombre">Familia elefante</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia conejos de 3.png" alt="Familia conejos de 3" />
+          </div>
+          <p class="producto-nombre">Familia conejos de 3</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia Reno.png" alt="Familia Reno" />
+          </div>
+          <p class="producto-nombre">Familia Reno</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia Foca.png" alt="Familia Foca" />
+          </div>
+          <p class="producto-nombre">Familia Foca</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia Dalmata.png" alt="Familia Dalmata" />
+          </div>
+          <p class="producto-nombre">Familia Dalmata</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia Pajaros de colores.png" alt="Familia Pájaros de colores" />
+          </div>
+          <p class="producto-nombre">Familia Pájaros de colores</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia Gatos negros.png" alt="Familia Gatos negros" />
+          </div>
+          <p class="producto-nombre">Familia Gatos negros</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia Shiba Inu.png" alt="Familia Shiba Inu" />
+          </div>
+          <p class="producto-nombre">Familia Shiba Inu</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia Bulldog.png" alt="Familia Bulldog" />
+          </div>
+          <p class="producto-nombre">Familia Bulldog</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia borrego.png" alt="Familia Borrego" />
+          </div>
+          <p class="producto-nombre">Familia Borrego</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia husky.png" alt="Familia Husky" />
+          </div>
+          <p class="producto-nombre">Familia Husky</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia koala.png" alt="Familia koala" />
+          </div>
+          <p class="producto-nombre">Familia Koala</p>
+          <p class="precio">
+            <span class="precio-actual">$650 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia jirafa.png" alt="Familia Jirafa" />
+          </div>
+          <p class="producto-nombre">Familia Jirafap>
+          <p class="precio">
+            <span class="precio-actual">$680 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+
+    <section id="kinder">
+      <h3 class="section-title">Kinder</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Guarderia de 2.png" alt="Guarderia de 2" />
+          </div>
+          <p class="producto-nombre">Guardería de 2</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Guarderia de 7.png" alt="Guarderia de 7" />
+          </div>
+          <p class="producto-nombre">Guardería de 7</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Set acuatico.png" alt="Set acuatico" />
+          </div>
+          <p class="producto-nombre">Set acuático</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Set de pijamas.png" alt="Set de pijamas" />
+          </div>
+          <p class="producto-nombre">Set de pijamas</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Set cuentos de hadas.png" alt="Set cuentos de hadas" />
+          </div>
+          <p class="producto-nombre">Set cuentos de hadas</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Fresas.png" alt="Fresas" />
+          </div>
+          <p class="producto-nombre">Fresas</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Hot Dogs.png" alt="Hot Dogs" />
+          </div>
+          <p class="producto-nombre">Hot Dogs</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Panaderos.png" alt="Panaderos" />
+          </div>
+          <p class="producto-nombre">Panaderos</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Crayolas.png" alt="Crayolas" />
+          </div>
+          <p class="producto-nombre">Crayolas</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Unicornios.png" alt="Unicornios" />
+          </div>
+          <p class="producto-nombre">Unicornios</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Circo.png" alt="Circo" />
+          </div>
+          <p class="producto-nombre">Circo</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Pinguinos gemelos.png" alt="Pinguinos gemelos" />
+          </div>
+          <p class="producto-nombre">Pingüinos gemelos</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Set de recital.png" alt="Set de recital" />
+          </div>
+          <p class="producto-nombre">Set de recital</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Set de gemas.png" alt="Set de Gemas" />
+          </div>
+          <p class="producto-nombre">Set de Gemas</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Set de Princesas.png" alt="Set de Princesas" />
+          </div>
+          <p class="producto-nombre">Set de Princesas</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Set de Lluvia.png" alt="Set de Lluvia" />
+          </div>
+          <p class="producto-nombre">Set de Lluvia</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Set de abejas.png" alt="Set de abejas" />
+          </div>
+          <p class="producto-nombre">Set de abejas</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <section id="sets-especiales">
+      <h3 class="section-title">Sets especiales</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Set de Pascua.png" alt="Set de Pascua" />
+          </div>
+          <p class="producto-nombre">Set de Pascua</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Gatos Exploradores.png" alt="Gatos Exploradores" />
+          </div>
+          <p class="producto-nombre">Gatos Exploradores</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Gatos orejas rizadas.png" alt="Gatos orejas rizadas" />
+          </div>
+          <p class="producto-nombre">Gatos orejas rizadas</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Familia de marineros.png" alt="Familia de marineros" />
+          </div>
+          <p class="producto-nombre">Familia de marineros</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Set de Cine.png" alt="Set de Cine" />
+          </div>
+          <p class="producto-nombre">Set de Cine</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Conejitas campestres.png" alt="Conejitas campestres" />
+          </div>
+          <p class="producto-nombre">Conejitas campestres</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Osos hermanos.png" alt="Osos hermanos" />
+          </div>
+          <p class="producto-nombre">Osos hermanos</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Osos trillizos.png" alt="Osos trillizos" />
+          </div>
+          <p class="producto-nombre">Osos trillizos</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Llavero Nonohana.png" alt="Llavero Nonohana" />
+          </div>
+          <p class="producto-nombre">Llavero Nonohana</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Llavero marinero.png" alt="Llavero marinero" />
+          </div>
+          <p class="producto-nombre">Llavero marinero</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <section id="sobres">
+      <h3 class="section-title">Sobres</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Bosque.png" alt="Sobre Bosque" />
+          </div>
+          <p class="producto-nombre">Bosque</p>
+          <p class="precio">
+            <span class="precio-actual">$120 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>5</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Contenido 1: $40 MXN</li>
+              <li>Contenido 2: $40 MXN</li>
+              <li>Contenido 3: $40 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Construccion.png" alt="Sobre Construccion" />
+          </div>
+          <p class="producto-nombre">Construcción</p>
+          <p class="precio">
+            <span class="precio-actual">$120 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>5</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Contenido 1: $40 MXN</li>
+              <li>Contenido 2: $40 MXN</li>
+              <li>Contenido 3: $40 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Loteria 2024.png" alt="Loteria 2024" />
+          </div>
+          <p class="producto-nombre">Lotería 2024</p>
+          <p class="precio">
+            <span class="precio-actual">$120 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>5</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Contenido 1: $40 MXN</li>
+              <li>Contenido 2: $40 MXN</li>
+              <li>Contenido 3: $40 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Loteria 2025.png" alt="Loteria 2025" />
+          </div>
+          <p class="producto-nombre">Lotería 2025</p>
+          <p class="precio">
+            <span class="precio-actual">$120 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>5</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Contenido 1: $40 MXN</li>
+              <li>Contenido 2: $40 MXN</li>
+              <li>Contenido 3: $40 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Hallowen fantasma.png" alt="Hallowen fantasma" />
+          </div>
+          <p class="producto-nombre">Halloween fantasma</p>
+          <p class="precio">
+            <span class="precio-actual">$120 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>5</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Contenido 1: $40 MXN</li>
+              <li>Contenido 2: $40 MXN</li>
+              <li>Contenido 3: $40 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Hallowen morado.png" alt="Hallowen morado" />
+          </div>
+          <p class="producto-nombre">Halloween morado</p>
+          <p class="precio">
+            <span class="precio-actual">$120 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>5</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Contenido 1: $40 MXN</li>
+              <li>Contenido 2: $40 MXN</li>
+              <li>Contenido 3: $40 MXN</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <section id="ternurines-todo">
+      <h3 class="section-title">Castillos y otros sets</h3>
+      <p class="section-note">
+        Aquí puedes poner un resumen de todo lo disponible de Ternurines o usarlo
+        como sección de “más vistos”.
+      </p>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Castillo cuento de hadas.png" alt="Castillo cuento de hadas" />
+          </div>
+          <p class="producto-nombre">Castillo cuento de hadas</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Mamá: $180 MXN</li>
+              <li>Niña: $200 MXN</li>
+              <li>Niño: $190 MXN</li>
+              <li>Papá: $200 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Gato hamburguesa.png" alt="Gato hamburguesa" />
+          </div>
+          <p class="producto-nombre">Gato hamburguesa</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Figura: $480 MXN</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Foca marinera.png" alt="Foca marinera" />
+          </div>
+          <p class="producto-nombre">Foca marinera</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+          <details class="detalles-precio">
+            <summary>Precios individuales</summary>
+            <ul>
+              <li>Figura: $480 MXN</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <!-- ===================== POPMART ===================== -->
+    <section id="popmart">
+      <h2 class="section-title-group">Popmart</h2>
+      <p class="section-note">
+        Blind boxes y colecciones especiales: Hirono, Kubo, Nyota, Labubu, Dimoo y Hacipupu.
+      </p>
+    </section>
+
+    <section id="hirono">
+      <h3 class="section-title">Hironos</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Le petit prince.png" alt="Le petit prince" />
+          </div>
+          <p class="producto-nombre">Le petit prince</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+            <span class="precio-original">$520 MXN</span>
+            <span class="badge-oferta">Oferta</span>
+          </p>
+          <p class="stock">Existencias: <span>2</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Shelter.png" alt="Shelter" />
+          </div>
+          <p class="producto-nombre">Shelter</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Echo.png" alt="Echo" />
+          </div>
+          <p class="producto-nombre">Echo</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Reshape.png" alt="Reshape" />
+          </div>
+          <p class="producto-nombre">Reshape</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Little Mischef.png" alt="Little Mischef" />
+          </div>
+          <p class="producto-nombre">Little Mischef</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Monster Carnival.png" alt="Monster Carnival" />
+          </div>
+          <p class="producto-nombre">Monster Carnival</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Snoopy.png" alt="Snoopy" />
+          </div>
+          <p class="producto-nombre">Snoopy</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Panda.png" alt="Panda" />
+          </div>
+          <p class="producto-nombre">Panda</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Living Wild.png" alt="Living Wild" />
+          </div>
+          <p class="producto-nombre">Living Wild</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Pianista.png" alt="Pianista" />
+          </div>
+          <p class="producto-nombre">Pianista</p>
+          <p class="precio">
+            <span class="precio-actual">$480 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <section id="nyota">
+      <h3 class="section-title">Nyota</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Fluffy Life.png" alt="Fluffy Life" />
+          </div>
+          <p class="producto-nombre">Fluffy Life</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Growing up.png" alt="Growing up" />
+          </div>
+          <p class="producto-nombre">Growing up</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Dreams.png" alt="Dreams" />
+          </div>
+          <p class="producto-nombre">Dreams</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <section id="kubo">
+      <h3 class="section-title">Kubo</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="24-7.png" alt="24/7" />
+          </div>
+          <p class="producto-nombre">24/7</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="select your character.png" alt="select your character" />
+          </div>
+          <p class="producto-nombre">select your character</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Breathing in.png" alt="Breathing in" />
+          </div>
+          <p class="producto-nombre">Breathing in</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="City of sunset.png" alt="City of sunset" />
+          </div>
+          <p class="producto-nombre">City of sunset</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <section id="labubu">
+      <h3 class="section-title">Labubu</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="One Piece.png" alt="One Piece" />
+          </div>
+          <p class="producto-nombre">One Piece</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Yoga.png" alt="Yoga" />
+          </div>
+          <p class="producto-nombre">Yoga</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Sets de escenarios.png" alt="Sets de escenarios" />
+          </div>
+          <p class="producto-nombre">Sets de escenarios</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <section id="dimoo">
+      <h3 class="section-title">Dimoo</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Dimoo Disney.png" alt="Dimoo Disney" />
+          </div>
+          <p class="producto-nombre">Dimoo Disney</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Dimoo animals kingdom.png" alt="Dimoo animals kingdom" />
+          </div>
+          <p class="producto-nombre">Dimoo animals kingdom</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <section id="hacipupu">
+      <h3 class="section-title">Hacipupu</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Bosque Hacipupu.png" alt="Bosque Hacipupu" />
+          </div>
+          <p class="producto-nombre">Bosque</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Animales Hacipupu.png" alt="Animales Hacipupu" />
+          </div>
+          <p class="producto-nombre">Animales</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <!-- ===================== MONCHICHIS ===================== -->
+    <section id="monchichis-group">
+      <h2 class="section-title-group">Monchichis</h2>
+      <p class="section-note">
+        Monchichis, Bebichichis y accesorios para tus peluditos coleccionables.
+      </p>
+    </section>
+
+    <section id="bebichichis">
+      <h3 class="section-title">Bebichichis</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Idol.png" alt="Idol" />
+          </div>
+          <p class="producto-nombre">Idol</p>
+          <p class="precio">
+            <span class="precio-actual">$600 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Bebichichi rosa.png" alt="Bebichichi rosa" />
+          </div>
+          <p class="producto-nombre">Bebichichi rosa</p>
+          <p class="precio">
+            <span class="precio-actual">$600 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Bebichichi azul.png" alt="Bebichichi azul" />
+          </div>
+          <p class="producto-nombre">Bebichichi azul</p>
+          <p class="precio">
+            <span class="precio-actual">$600 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Bebichichi basico.png" alt="Bebichichi basico" />
+          </div>
+          <p class="producto-nombre">Bebichichi básico</p>
+          <p class="precio">
+            <span class="precio-actual">$600 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <section id="monchichis">
+      <h3 class="section-title">Monchichis</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Monchichi rubio.png" alt="Monchichi rubio" />
+          </div>
+          <p class="producto-nombre">Monchichi rubio</p>
+          <p class="precio">
+            <span class="precio-actual">$650 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Monchichi cafe.png" alt="Monchichi cafe" />
+          </div>
+          <p class="producto-nombre">Monchichi café</p>
+          <p class="precio">
+            <span class="precio-actual">$650 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Monchichi tamaño s niño.png" alt="Monchichi tamaño s niño" />
+          </div>
+          <p class="producto-nombre">Monchichi tamaño S niño</p>
+          <p class="precio">
+            <span class="precio-actual">$650 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Monchichi tamaño s niña.png" alt="Monchichi tamaño s niña" />
+          </div>
+          <p class="producto-nombre">Monchichi tamaño S niña</p>
+          <p class="precio">
+            <span class="precio-actual">$650 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <section id="accesorios-monchichis">
+      <h3 class="section-title">Accesorios</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Monedero.png" alt="Monedero" />
+          </div>
+          <p class="producto-nombre">Monedero</p>
+          <p class="precio">
+            <span class="precio-actual">$350 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>2</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Bolso.png" alt="Bolso" />
+          </div>
+          <p class="producto-nombre">Bolso</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>2</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Tote bag.png" alt="Tote bag" />
+          </div>
+          <p class="producto-nombre">Tote bag</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>2</span></p>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <!-- ===================== MÁS ===================== -->
+    <section id="mas-group">
+      <h2 class="section-title-group">Más</h2>
+      <p class="section-note">
+        Otras colecciones que también viven en Ternurines Chiclosos.
+      </p>
+    </section>
+
+    <section id="smiskis">
+      <h3 class="section-title">Smiskis</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Birthday.png" alt="Birthday" />
+          </div>
+          <p class="producto-nombre">Birthday</p>
+          <p class="precio">
+            <span class="precio-actual">$320 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Moving.png" alt="Moving" />
+          </div>
+          <p class="producto-nombre">Moving</p>
+          <p class="precio">
+            <span class="precio-actual">$320 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Bath.png" alt="Bath" />
+          </div>
+          <p class="producto-nombre">Bath</p>
+          <p class="precio">
+            <span class="precio-actual">$320 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Yoga smiskis.png" alt="Yoga Smiskis" />
+          </div>
+          <p class="producto-nombre">Yoga</p>
+          <p class="precio">
+            <span class="precio-actual">$320 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Work.png" alt="Work" />
+          </div>
+          <p class="producto-nombre">Work</p>
+          <p class="precio">
+            <span class="precio-actual">$320 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <section id="nommis">
+      <h3 class="section-title">Nommis</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Frutales.png" alt="Frutales" />
+          </div>
+          <p class="producto-nombre">Frutales</p>
+          <p class="precio">
+            <span class="precio-actual">$300 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Animales nommi.png" alt="Animales Nommi" />
+          </div>
+          <p class="producto-nombre">Animales</p>
+          <p class="precio">
+            <span class="precio-actual">$300 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <section id="peluches">
+      <h3 class="section-title">Peluches</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Mochilas de capibara.png" alt="Mochilas de capibara" />
+          </div>
+          <p class="producto-nombre">Mochilas de capibara</p>
+          <p class="precio">
+            <span class="precio-actual">$650 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Mochila de gato negro.png" alt="Mochila de gato negro" />
+          </div>
+          <p class="producto-nombre">Mochila de gato negro</p>
+          <p class="precio">
+            <span class="precio-actual">$650 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Mochila de snoopy.png" alt="Mochila de snoopy" />
+          </div>
+          <p class="producto-nombre">Mochila de snoopy</p>
+          <p class="precio">
+            <span class="precio-actual">$650 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Capibara mediano basico.png" alt="Capibara mediano basico" />
+          </div>
+          <p class="producto-nombre">Capibara mediano básico</p>
+          <p class="precio">
+            <span class="precio-actual">$600 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Almohada de capibara.png" alt="Almohada de capibara" />
+          </div>
+          <p class="producto-nombre">Almohada de capibara</p>
+          <p class="precio">
+            <span class="precio-actual">$600 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Osito cariñosito mediano.png" alt="Osito cariñosito mediano" />
+          </div>
+          <p class="producto-nombre">Osito cariñosito mediano</p>
+          <p class="precio">
+            <span class="precio-actual">$600 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <section id="mofusand">
+      <h3 class="section-title">Mofusand</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <div class="producto-imagen">
+            <img src="Mini muñeco de vinyl.png" alt="Mini muñeco de vinyl" />
+          </div>
+          <p class="producto-nombre">Mini muñeco de vinyl</p>
+          <p class="precio">
+            <span class="precio-actual">$450 MXN</span>
+          </p>
+          <p class="stock">Existencias: <span>1</span></p>
+        </article>
+      </div>
+      <p class="pedido-instagram">
+        Realiza tu pedido por Instagram:
+        <a href="https://instagram.com/tu_instagram_aqui" target="_blank">@tu_instagram_aqui</a>
+      </p>
+    </section>
+
+    <!-- Quiénes somos -->
+    <section id="quienes-somos">
+      <h2 class="section-title-group">Quiénes somos</h2>
+      <div class="texto-bloque">
+        <p>
+          Aquí puedes escribir la historia de Ternurines Chiclosos: cómo nació la
+          tiendita, desde el puesto en Balderas hasta las entregas y envíos con
+          mucho cariño, qué tipo de coleccionables manejas y qué hace especial tu
+          proyecto.
+        </p>
+      </div>
+    </section>
+
+    <!-- Referencias -->
+    <section id="referencias">
+      <h2 class="section-title-group">Referencias</h2>
+      <div class="galeria">
+        <img src="ref-1.jpg" alt="Referencia 1" />
+        <img src="ref-2.jpg" alt="Referencia 2" />
+        <img src="ref-3.jpg" alt="Referencia 3" />
+        <img src="ref-4.jpg" alt="Referencia 4" />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Ternurines Chiclosos · Hecho con ternurita.
+  </footer>
+
+  <script>
+    // Menú hamburguesa
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.getElementById("mainNav");
+    const navClose = document.querySelector(".nav-close");
+
+    function toggleNav() {
+      mainNav.classList.toggle("open");
+    }
+
+    menuToggle.addEventListener("click", toggleNav);
+    navClose.addEventListener("click", toggleNav);
+
+    // Cerrar menú al hacer click en algún enlace
+    mainNav.addEventListener("click", (e) => {
+      if (e.target.tagName === "A") {
+        mainNav.classList.remove("open");
+      }
+    });
+
+    // Año automático en el footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /*
+      💾 NOTA SOBRE EXCEL:
+      Más adelante podemos exportar tu archivo de Excel a CSV/JSON
+      y usar fetch() para generar automáticamente estas tarjetas
+      (nombre, precio, si está en oferta, existencias, categoría, precios individuales).
+    */
+  </script>
+
+
+/* Aviso superior fijo */
+.aviso-envio {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f7b5d2;   /* rosa del logo */
+  color: #ffffff;              /* letras blancas */
+  text-align: center;
+  font-weight: 800;            /* más grueso */
+  font-size: 1rem;
+  font-family: 'Poppins', 'Nunito', 'Quicksand', sans-serif; /* tipografía redondeada */
+  letter-spacing: 0.5px;
+  padding: 0.6rem 0;
+  z-index: 1001;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Ajuste: que la barra titular baje un poquito */
+.barra-titular {
+  margin-top: 40px;
+}
+
+</body>
+</html>
