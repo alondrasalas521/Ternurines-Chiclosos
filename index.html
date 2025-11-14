@@ -2584,4 +2584,81 @@
     */
   </script>
 </body>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const DESCUENTO_GENERAL = 0.10; // 10% para todos
+  const DESCUENTO_ESPECIAL = 0.05; // 5% para Hirono y Monchichis
+
+  // Aplica descuento a precios principales
+  document.querySelectorAll('.precio').forEach((precioEl) => {
+    const actualEl = precioEl.querySelector('.precio-actual');
+    if (!actualEl) return;
+
+    // Detectar sección (familia, hirono, monchichi, etc.)
+    const seccion = precioEl.closest('section');
+    const id = seccion ? seccion.id.toLowerCase() : '';
+    const descuento = (id.includes('hirono') || id.includes('monchichi'))
+      ? DESCUENTO_ESPECIAL
+      : DESCUENTO_GENERAL;
+
+    let base;
+    let originalEl = precioEl.querySelector('.precio-original');
+
+    const getNum = (txt) => {
+      const m = (txt || '').replaceAll(',', '').match(/\d+/);
+      return m ? parseInt(m[0], 10) : null;
+    };
+
+    if (originalEl) {
+      base = getNum(originalEl.textContent);
+    } else {
+      base = getNum(actualEl.textContent);
+      if (!base) return;
+      originalEl = document.createElement('span');
+      originalEl.className = 'precio-original';
+      originalEl.textContent = `$${base} MXN`;
+      precioEl.appendChild(originalEl);
+    }
+
+    const rebajado = Math.round(base * (1 - descuento));
+    actualEl.textContent = `$${rebajado} MXN`;
+
+    // Agregar o actualizar badge
+    let badge = precioEl.querySelector('.badge-oferta');
+    if (!badge) {
+      badge = document.createElement('span');
+      badge.className = 'badge-oferta';
+      precioEl.appendChild(badge);
+    }
+    badge.textContent = descuento === DESCUENTO_GENERAL
+      ? 'Oferta 10%'
+      : 'Oferta 5%';
+  });
+
+  // Aplica descuento a precios individuales
+  document.querySelectorAll('.detalles-precio').forEach((detalle) => {
+    const seccion = detalle.closest('section');
+    const id = seccion ? seccion.id.toLowerCase() : '';
+    const descuento = (id.includes('hirono') || id.includes('monchichi'))
+      ? DESCUENTO_ESPECIAL
+      : DESCUENTO_GENERAL;
+
+    detalle.querySelectorAll('li').forEach((li) => {
+      const m = li.textContent.replaceAll(',', '').match(/\$(\d+)\s*MXN/);
+      if (!m) return;
+      const base = parseInt(m[1], 10);
+      const rebajado = Math.round(base * (1 - descuento));
+      li.textContent = li.textContent.replace(
+        /\$\d+\s*MXN/,
+        `$${rebajado} MXN (antes $${base} MXN)`
+      );
+    });
+  });
+});
+</script>
+
+
 </html>
+
+
